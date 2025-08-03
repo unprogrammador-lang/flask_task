@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar tarea</title>
+</head>
+<body>
+    <h1>Agregar nueva tarea</h1>
+    <form method="post">
+        <input name="tarea" placeholder="Escribe una tarea" required>
+        <button type="submit">Agregar</button>
+    </form>
+    <a href="{{ url_for('index') }}">Volver</a>
+</body>
+</html>

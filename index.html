@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tareas</title>
+</head>
+<body>
+    <h1>Mis Tareas</h1>
+    <ul>
+        {% for tarea in tareas %}
+            <li>
+                {{ tarea.texto }}
+                [<a href="{{ url_for('edit', id=tarea.id) }}">Editar</a>]
+                [<a href="{{ url_for('delete', id=tarea.id) }}" onclick="return confirm('¿Eliminar esta tarea?')">Eliminar</a>]
+            </li>
+        {% else %}
+            <li>No hay tareas aún.</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('add') }}">Agregar tarea</a>
+</body>
+</html>
